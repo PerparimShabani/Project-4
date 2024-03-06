@@ -1,164 +1,172 @@
+<!--restuarant/templates/restaurant/home.html-->
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        {% load static %}
-        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-        <title>Restuarante Al Dente</title>
-    </head>
-    <body>
-        <header>
-            <h1>Restuarante Al Dente</h1>
-        </header>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% load static %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/style.css' %}"
+    />
+    <title>Restuarante Al Dente</title>
+  </head>
+  <body>
+    <header>
+      <h1>Restuarante Al Dente</h1>
+      <ul>
+        {% for restaurant in restaurants %}
+            <li>Total Seats: {{ restaurant.total_seats }}</li>
+            <li>Available Seats: {{ restaurant.available_seats }}</li>
+        {% endfor %}
+    </ul>
+    </header>
 
-        <main>
-            <!--Booking Display -->
-            <section id="booking-form">
-                <label for="date">Date:</label>
-                <input type="date" id="date" required>
+    <main>
+      <!--Booking Display -->
+      <section id="booking-form">
+        <label for="date">Date:</label>
+        <input type="date" id="date" required />
 
-                <label for="time">Time:</label>
-                <input type="time" id="time" required>
+        <label for="time">Time:</label>
+        <input type="time" id="time" required />
 
-                <label for="guests">Number of Guests:</label>
-                <input type="number" id="guests" min="1" max="8" required>
+        <label for="guests">Number of Guests:</label>
+        <input type="number" id="guests" min="1" max="8" required />
 
-                <label for="allergies">Allergies (notify staff upon
-                    arrival aswell for extra assurance):</label>
-                <textarea id="allergies" rows="4"
-                    placeholder="Please specify any allergies"></textarea>
+        <label for="allergies"
+          >Allergies (notify staff upon arrival aswell for extra
+          assurance):</label
+        >
+        <textarea
+          id="allergies"
+          rows="4"
+          placeholder="Please specify any allergies"
+        ></textarea>
 
-                <button onclick="makeBooking()">Make Booking</button>
-                <div id="reservation-status"></div>
-            </section>
-            <!--Menu Options -->
-            <section id="menu">
-                <h2>Menu</h2>
-                <div class="category">
-                    <h3>Pizza</h3>
-                    <ul>
-                        <!-- Pizza Options -->
-                        <li>
-                            <h4>Margherita Pizza</h4>
-                            <p>Classic pizza with fresh tomatoes, mozzarella,
-                                and
-                                basil.</p>
-                            <p>Price: $12.99</p>
-                        </li>
-                        <li>
-                            <h4>Pepperoni Pizza</h4>
-                            <p>Traditional pizza topped with pepperoni
-                                slice.s</p>
-                            <p>Price: $14.99</p>
-                        </li>
-                        <li>
-                            <h4>Veggie Delight Pizza</h4>
-                            <p>Vegetarian pizza loaded with assoreted
-                                veggies.</p>
-                            <p>Price: $13.99</p>
-                        </li>
-                        <li>
-                            <h4>Hawaiian Pizza</h4>
-                            <p>Pizza with ham, pineapple, and cheese.</p>
-                            <p>Price: $15.99</p>
-                        </li>
-                        <li>
-                            <h4>BBQ Chicken Pizza</h4>
-                            <p>Pizza topped with BBQ chicken and onions.</p>
-                            <p>Price: $16.99</p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="category">
-                    <h3>Pasta</h3>
-                    <ul>
-                        <!-- Pasta Options -->
-                        <li>
-                            <h4>Spaghetti Bolognese</h4>
-                            <p>Classic spaghetti with meaty Bolognese sauce.</p>
-                            <p>Price: $10.99</p>
-                        </li>
-                        <li>
-                            <h4>Alfredo Fettuccine</h4>
-                            <p>Fettuccine pasta in a creamy Alfredo sauce.</p>
-                            <p>Price: $11.99</p>
-                        </li>
-                        <li>
-                            <h4>Vegetarian Penne</h4>
-                            <p>Penne pasta with a medley of fresh
-                                vegetables.</p>
-                            <p>Price: $12.99</p>
-                        </li>
-                        <li>
-                            <h4>Spicy Arrabbiata</h4>
-                            <p>Arrabbiata pasta with a spicy tomato sauce.</p>
-                            <p>Price: $13.99</p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="category">
-                    <h3>Salad</h3>
-                    <ul>
-                        <!-- Salad Options -->
-                        <li>
-                            <h4>Greek Salad</h4>
-                            <p>Fresh salad with tomatoes, cucumbers, feta, and
-                                olives.</p>
-                            <p>Price: $8.99</p>
-                        </li>
-                        <li>
-                            <h4>Caeser Salad</h4>
-                            <p>Classic Caesar salad with romaine lettuce and
-                                croutons.</p>
-                            <p>Price: $9.99</p>
-                        </li>
-                        <!-- Add more salad options as needed -->
-                    </ul>
-                </div>
-                <div class="category">
-                    <h3>Dessert</h3>
-                    <ul>
-                        <!-- Dessert Options -->
-                        <li>
-                            <h4>Chocolate Lava Cake</h4>
-                            <p>Warm chocolate cake with a gooey center.</p>
-                            <p>Price: $5.99</p>
-                        </li>
-                        <li>
-                            <h4>Tiramisu</h4>
-                            <p>Classic Italian dessert with coffee-soaked
-                                ladyfingers.</p>
-                            <p>Price: $6.99</p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="category">
-                    <h3>Drink</h3>
-                    <ul>
-                        <!-- Drink Options -->
-                        <li>
-                            <h4>Coffee</h4>
-                            <p>Freshly brewed Coffee</p>
-                            <p>Price: $2.99</p>
-                        </li>
-                        <li>
-                            <h4>Soda</h4>
-                            <p>Assorted soft drinks</p>
-                            <p>Price: $2.99</p>
-                        </li>
-                        <li>
-                            <h4>Fruit Punch</h4>
-                            <p>Refreshing fruit punch</p>
-                            <p>Price: $3.99</p>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-        </main>
-        {% load static %}
-        <script src="{% static 'js/Index.js' %}"></script>
-    </body>
+        <button onclick="makeBooking()">Make Booking</button>
+        <div id="reservation-status"></div>
+      </section>
+      <!--Menu Options -->
+      <section id="menu">
+        <h2>Menu</h2>
+        <div class="category">
+          <h3>Pizza</h3>
+          <ul>
+            <!-- Pizza Options -->
+            <li>
+              <h4>Margherita Pizza</h4>
+              <p>Classic pizza with fresh tomatoes, mozzarella, and basil.</p>
+              <p>Price: $12.99</p>
+            </li>
+            <li>
+              <h4>Pepperoni Pizza</h4>
+              <p>Traditional pizza topped with pepperoni slice.s</p>
+              <p>Price: $14.99</p>
+            </li>
+            <li>
+              <h4>Veggie Delight Pizza</h4>
+              <p>Vegetarian pizza loaded with assoreted veggies.</p>
+              <p>Price: $13.99</p>
+            </li>
+            <li>
+              <h4>Hawaiian Pizza</h4>
+              <p>Pizza with ham, pineapple, and cheese.</p>
+              <p>Price: $15.99</p>
+            </li>
+            <li>
+              <h4>BBQ Chicken Pizza</h4>
+              <p>Pizza topped with BBQ chicken and onions.</p>
+              <p>Price: $16.99</p>
+            </li>
+          </ul>
+        </div>
+        <div class="category">
+          <h3>Pasta</h3>
+          <ul>
+            <!-- Pasta Options -->
+            <li>
+              <h4>Spaghetti Bolognese</h4>
+              <p>Classic spaghetti with meaty Bolognese sauce.</p>
+              <p>Price: $10.99</p>
+            </li>
+            <li>
+              <h4>Alfredo Fettuccine</h4>
+              <p>Fettuccine pasta in a creamy Alfredo sauce.</p>
+              <p>Price: $11.99</p>
+            </li>
+            <li>
+              <h4>Vegetarian Penne</h4>
+              <p>Penne pasta with a medley of fresh vegetables.</p>
+              <p>Price: $12.99</p>
+            </li>
+            <li>
+              <h4>Spicy Arrabbiata</h4>
+              <p>Arrabbiata pasta with a spicy tomato sauce.</p>
+              <p>Price: $13.99</p>
+            </li>
+          </ul>
+        </div>
+        <div class="category">
+          <h3>Salad</h3>
+          <ul>
+            <!-- Salad Options -->
+            <li>
+              <h4>Greek Salad</h4>
+              <p>Fresh salad with tomatoes, cucumbers, feta, and olives.</p>
+              <p>Price: $8.99</p>
+            </li>
+            <li>
+              <h4>Caeser Salad</h4>
+              <p>Classic Caesar salad with romaine lettuce and croutons.</p>
+              <p>Price: $9.99</p>
+            </li>
+            <!-- Add more salad options as needed -->
+          </ul>
+        </div>
+        <div class="category">
+          <h3>Dessert</h3>
+          <ul>
+            <!-- Dessert Options -->
+            <li>
+              <h4>Chocolate Lava Cake</h4>
+              <p>Warm chocolate cake with a gooey center.</p>
+              <p>Price: $5.99</p>
+            </li>
+            <li>
+              <h4>Tiramisu</h4>
+              <p>Classic Italian dessert with coffee-soaked ladyfingers.</p>
+              <p>Price: $6.99</p>
+            </li>
+          </ul>
+        </div>
+        <div class="category">
+          <h3>Drink</h3>
+          <ul>
+            <!-- Drink Options -->
+            <li>
+              <h4>Coffee</h4>
+              <p>Freshly brewed Coffee</p>
+              <p>Price: $2.99</p>
+            </li>
+            <li>
+              <h4>Soda</h4>
+              <p>Assorted soft drinks</p>
+              <p>Price: $2.99</p>
+            </li>
+            <li>
+              <h4>Fruit Punch</h4>
+              <p>Refreshing fruit punch</p>
+              <p>Price: $3.99</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    {% load static %}
+    <script src="{% static 'js/Index.js' %}"></script>
+  </body>
 </html>

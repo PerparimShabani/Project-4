@@ -1,3 +1,5 @@
 from django.db import models
 
-# Create your models here.
+class Restaurant(models.Model):
+    total_seats=models.IntegerField(default=40)
+    available_seats=models.IntegerField(default=40)
