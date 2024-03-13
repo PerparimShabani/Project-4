@@ -8,24 +8,26 @@ The Restaurant Booking and Cancellation System is designed to simplify the proce
 ### Features
 ### Existing Features 
 - _Booking Form_:
-  - _Allows customers to book a table by providing details such as name, date, time, number of guests, and any allergies._
-  - _Validates user input to ensure data accuracy._
-  - _Displays a confirmation message upon successful booking._
--_Cancellation Form:_
-  -_Enables customers to cancel a previously made booking by entering their booking ID._
-  -_Validates the booking ID to ensure accurate cancellation.
-  -_Provides feedback to the user regarding the cancellation status._
--_Real-time Availability Update:_
-  -_Automatically updates the available seats in the restaurant based on new bookings and cancellations._
-  -Ensures that the displayed availability is always accurate._
+  - Allows customers to book a table by providing details such as name, date, time, number of guests, and any allergies.
+  - Validates user input to ensure data accuracy.
+  - Displays a confirmation message upon successful booking.
+    
+- Cancellation Form:
+  - Enables customers to cancel a previously made booking by entering their booking ID.
+  - Validates the booking ID to ensure accurate cancellation.
+  - Provides feedback to the user regarding the cancellation status.
+  
+- Real-time Availability Update:
+  - Automatically updates the available seats in the restaurant based on new bookings and cancellations.
+  - Ensures that the displayed availability is always accurate.
 
 ### Future Features 
--_User Authentication:_ 
-  -_Implement user accounts for customers to manage their bookings._
-  -_Allow restaurant staff to access a dashboard for managing reservations._
--_Email Notifications:_ 
-  -_Send confirmation emails to customers upon successful bookings._
-  -_Notify restaurant staff of new bookings and cancellations via email._
+- User Authentication: 
+  - Implement user accounts for customers to manage their bookings.
+  - Allow restaurant staff to access a dashboard for managing reservations.
+- Email Notifications: 
+  - Send confirmation emails to customers upon successful bookings.
+  - Notify restaurant staff of new bookings and cancellations via email.
 
 
 ### Testing
