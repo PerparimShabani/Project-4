@@ -37,5 +37,5 @@ The Restaurant Booking and Cancellation System has undergone extensive testing t
 will Update soon on both HTML/CSS with it due to not having any more time before deadline. 
 
 ### Unfixed issues
-Due not having more time on my part I have yet to fix the Cancellation on my code and the form code. I wont be at home to work on it before the time strike 12 am Irish time to submitt my project.
+Due to not having more time on my part I have yet to fix the Cancellation on my code and the form code and some of the styling. I wont be at home to work on it before the time strike 12 am Irish time to submitt my project.
 
