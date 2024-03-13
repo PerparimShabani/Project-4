@@ -65,3 +65,19 @@ button:hover {
 .category h4 {
     color: #555;
 }
+
+.forms-container{
+    display: flex;
+    padding: 5rem;
+}
+
+.form{
+    width: 45%;
+    margin-right: 5%;
+}
+
+.forms-container::after {
+    content: "";
+    display: table;
+    clear: both;
+}

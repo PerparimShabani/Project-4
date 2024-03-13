@@ -8,11 +8,20 @@ def home(request):
    
     return render(request,'restaurant/home.html',context)
 
-def book_table(request, restaurant_id, guests):
-    restaurant = Restaurant.objects.get(id=restaurant_id)
-    if restaurant.available_seats >= guests:
-        restaurant.available_seats -= guests
-        restaurant.save()
+def book_table(request, guests):
+    restaurant = Restaurant.objects.first()
+    if restaurant:
+        if restaurant.available_seats >= guests:
+            restaurant.available_seats -= guests
+            restaurant.save()
+    print ("Table booked for", guests, "guests")
     return redirect('home')
 
-        
+def unbook_table(request, guests):
+    restaurant = Restaurant.objects.first()
+    if restaurant:
+        if restaurant.available_seats >= guests:
+            restaurant.available_seats += guests
+            restaurant.save()
+    print ("Table unbooked for", guests, "guests")
+    return redirect('home')

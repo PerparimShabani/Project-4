@@ -19,37 +19,67 @@
       <h1>Restuarante Al Dente</h1>
       <ul>
         {% for restaurant in restaurants %}
-            <li>Total Seats: {{ restaurant.total_seats }}</li>
-            <li>Available Seats: {{ restaurant.available_seats }}</li>
+        <li>{{ restuarant.id }}</li>
+        <li>Total Seats: {{ restaurant.total_seats }}</li>
+        <li>
+          Available Seats:
+          <span id="available-seats">{{ restaurant.available_seats }}</span>
+        </li>
         {% endfor %}
-    </ul>
+      </ul>
     </header>
 
     <main>
       <!--Booking Display -->
-      <section id="booking-form">
-        <label for="date">Date:</label>
-        <input type="date" id="date" required />
+      <div class="forms-container">
+        <h1>Make a Reservation</h1>
+        <section id="booking-form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" required />
+          <p>Your name is the booking-ID <p>
 
-        <label for="time">Time:</label>
-        <input type="time" id="time" required />
+          <label for="date">Date:</label>
+          <input type="date" id="date" required />
 
-        <label for="guests">Number of Guests:</label>
-        <input type="number" id="guests" min="1" max="8" required />
+          <label for="time">Time:</label>
+          <input type="time" id="time" required />
 
-        <label for="allergies"
-          >Allergies (notify staff upon arrival aswell for extra
-          assurance):</label
-        >
-        <textarea
-          id="allergies"
-          rows="4"
-          placeholder="Please specify any allergies"
-        ></textarea>
+          <label for="guests">Number of Guests:</label>
+          <input type="number" id="guests" min="1" max="8" required />
 
-        <button onclick="makeBooking()">Make Booking</button>
-        <div id="reservation-status"></div>
-      </section>
+          <label for="allergies"
+            >Allergies (notify staff upon arrival aswell for extra
+            assurance):</label
+          >
+          <textarea
+            id="allergies"
+            rows="4"
+            placeholder="Please specify any allergies"
+          ></textarea>
+
+          <button onclick="makeBooking()">Make Booking</button>
+          <div id="reservation-message"></div>
+        </section>
+
+        <section id="cancellation-form" class="form">
+          <h2>Cancel Booking</h2>
+          
+          <label for="cancel-booking-id">Booking ID:</label>
+          <input type="text" id="cancel-booking-id" required />
+
+          <label for="cancel-date">Date:</label>
+          <input type="date" id="cancel-date" required />
+
+          <label for="cancel-time">Time:</label>
+          <input type="time" id="cancel-time" required />
+
+          <label for="cancel-guests">Number of Guests:</label>
+          <input type="number" id="cancel-guests" min="1" max="8" required />
+
+          <button onclick="cancelBooking()">Cancel Booking</button>
+          <div id="cancellation-message"></div>
+        </section>
+      </div>
       <!--Menu Options -->
       <section id="menu">
         <h2>Menu</h2>
