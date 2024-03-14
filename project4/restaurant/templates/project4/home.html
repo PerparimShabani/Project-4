@@ -2,16 +2,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     {% load static %}
     <link
       rel="stylesheet"
       type="text/css"
       href="{% static 'css/style.css' %}"
-    />
+    >
     <title>Restuarante Al Dente</title>
   </head>
   <body>
@@ -36,34 +36,36 @@
         <section id="booking-form">
           <label for="name">Name:</label>
           <input type="text" id="name" required />
-          <p>Your name is the booking-ID <p>
+          <p>Your name is the booking-ID</p>
+          <p>
+            <label for="date">Date:</label>
+            <input type="date" id="date" required />
 
-          <label for="date">Date:</label>
-          <input type="date" id="date" required />
+            <label for="time">Time:</label>
+            <input type="time" id="time" required />
 
-          <label for="time">Time:</label>
-          <input type="time" id="time" required />
+            <label for="guests">Number of Guests:</label>
+            <input type="number" id="guests" min="1" max="8" required />
 
-          <label for="guests">Number of Guests:</label>
-          <input type="number" id="guests" min="1" max="8" required />
+            <label for="allergies"
+              >Allergies (notify staff upon arrival aswell for extra
+              assurance):</label
+            >
+            <textarea
+              id="allergies"
+              rows="4"
+              placeholder="Please specify any allergies"
+            ></textarea>
 
-          <label for="allergies"
-            >Allergies (notify staff upon arrival aswell for extra
-            assurance):</label
-          >
-          <textarea
-            id="allergies"
-            rows="4"
-            placeholder="Please specify any allergies"
-          ></textarea>
+            <button onclick="makeBooking()">Make Booking</button>
+          </p>
 
-          <button onclick="makeBooking()">Make Booking</button>
           <div id="reservation-message"></div>
         </section>
 
         <section id="cancellation-form" class="form">
           <h2>Cancel Booking</h2>
-          
+
           <label for="cancel-booking-id">Booking ID:</label>
           <input type="text" id="cancel-booking-id" required />
 
