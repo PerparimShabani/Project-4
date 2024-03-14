@@ -1,2 +1,41 @@
-# Project-4
- Restaurant booking System
+# Restaurant Booking and Cancellation System
+
+Welcome to the Restaurant Booking and Cancellation System README! This project aims to provide a streamlined solution for making and canceling restaurant reservations online. Whether you're a customer looking to book a table or a restaurant manager needing to manage reservations, this system has you covered.
+
+## Overview
+The Restaurant Booking and Cancellation System is designed to simplify the process of making and canceling restaurant reservations. It targets both customers who want to book a table at a restaurant and restaurant staff who need to manage bookings efficiently. By providing a user-friendly interface and robust backend functionality, this system aims to enhance the dining experience for both customers and restaurant owners.
+
+### Features
+### Existing Features 
+- _Booking Form_:
+  - Allows customers to book a table by providing details such as name, date, time, number of guests, and any allergies.
+  - Validates user input to ensure data accuracy.
+  - Displays a confirmation message upon successful booking.
+    
+- Cancellation Form:
+  - Enables customers to cancel a previously made booking by entering their booking ID.
+  - Validates the booking ID to ensure accurate cancellation.
+  - Provides feedback to the user regarding the cancellation status.
+  
+- Real-time Availability Update:
+  - Automatically updates the available seats in the restaurant based on new bookings and cancellations.
+  - Ensures that the displayed availability is always accurate.
+
+### Future Features 
+- User Authentication: 
+  - Implement user accounts for customers to manage their bookings.
+  - Allow restaurant staff to access a dashboard for managing reservations.
+- Email Notifications: 
+  - Send confirmation emails to customers upon successful bookings.
+  - Notify restaurant staff of new bookings and cancellations via email.
+
+
+### Testing
+The Restaurant Booking and Cancellation System has undergone extensive testing to ensure its functionality across different devices and browsers.
+
+### Validator Testing 
+will Update soon on both HTML/CSS with it due to not having any more time before deadline. 
+
+### Unfixed issues
+Due to not having more time on my part I have yet to fix the Cancellation on my code and the form code and some of the styling. I wont be at home to work on it before the time strike 12 am Irish time to submitt my project.
+
