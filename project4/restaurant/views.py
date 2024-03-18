@@ -6,7 +6,7 @@ def home(request):
     restaurants = Restaurant.objects.all()
     context = {'restaurants': restaurants}
    
-    return render(request,'restaurant/home.html',context)
+    return render(request,'restaurant/index.html',context)
 
 def book_table(request, guests):
     restaurant = Restaurant.objects.first()
