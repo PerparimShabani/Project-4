@@ -72,4 +72,4 @@ function displayCancellationMessage(message) {
     cancellationMessageDiv.textContent = "";
   }, 3000);
 }
-// post anrop med fetch och restaurant id som parameter
+
